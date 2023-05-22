@@ -34,4 +34,11 @@ Route::get('/PageSobreNos', [SobreNos_Contr::class, 'loadPageSobreNos']);
 
 Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato']);
 
+//passando variaveis obrigatórios ou opcionais pelo host.
+Route::get('/PageInstrucao/{var1}/{var2}/{varOpcional?}', 
+function(string $a, string $b, string $opcional='variável não foi declarada'){
+    echo "1° e 2° variáveis são, respectivamente = $a e $b.\n";
+    echo "E a variável opcional = $opcional.";
+});
 
+//[Instrucao_InsContr::class, 'loadPageInstrucao']);
