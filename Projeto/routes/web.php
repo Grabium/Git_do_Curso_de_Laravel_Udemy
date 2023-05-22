@@ -39,9 +39,13 @@ Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato']);
 //ao passar 2 ou 3 parâmetros essa rota abaixo será ativada.
 //diferente disso, ou de 0(zero) parâmetros, vai dar erro.
 Route::get('/PageInstrucao/{var1}/{var2}/{varOpcional?}', 
-function(string $a, string $b, string $opcional='variável não foi declarada'){
+function(string $a, float $b, string $opcional='variável não foi declarada'){
     echo "1° e 2° variáveis são, respectivamente = $a e $b.\n";
     echo "E a variável opcional = $opcional.";
-});
+})->where('var1', '[A-Za-z]+')->where('var2', '[1.0-9.0]+')->where('opcional', '[A-Za-z]+');
+//Epressões regulares:
+//imposições de condições. var1 deve receber strings e var2, números.
+//o parâmetro "opcional" pode receber números de 5 a 8. 
+//
+//caso não cumprida uma ou mais requisito, a página de "not found" será carregada.
 
-//[Instrucao_InsContr::class, 'loadPageInstrucao']);
