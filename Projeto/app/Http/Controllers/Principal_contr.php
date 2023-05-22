@@ -7,6 +7,6 @@ namespace App\Http\Controllers;
 class Principal_contr extends Controller
 {
     public function loadPagePrincipal(){
-        return view("welcome");
+        return view("site/principal");
     }
 }

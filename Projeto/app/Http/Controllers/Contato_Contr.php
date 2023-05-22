@@ -7,6 +7,6 @@ namespace App\Http\Controllers;
 class Contato_Contr extends Controller
 {
     public function loadPageContato(){
-        return view("contato");
+        return view("site/contato");
     }
 }

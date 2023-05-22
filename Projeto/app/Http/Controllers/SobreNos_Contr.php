@@ -7,6 +7,6 @@ namespace App\Http\Controllers;
 class SobreNos_Contr extends Controller
 {
     public function loadPageSobreNos(){
-        return view("sobreNos");
+        return view("site/sobreNos");
     }
 }

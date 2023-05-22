@@ -7,6 +7,7 @@ use App\Http\Controllers\RoutesMVC_InsContr;
 use App\Http\Controllers\Contato_Contr;
 use App\Http\Controllers\SobreNos_Contr;
 
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,3 +33,5 @@ Route::get('/PageRoutesMVC', [RoutesMVC_InsContr::class, 'loadPageRoutesMVC']);
 Route::get('/PageSobreNos', [SobreNos_Contr::class, 'loadPageSobreNos']);
 
 Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato']);
+
+

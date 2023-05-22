@@ -10,10 +10,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-
+        <!-- Styles -->
+        
     </head>
     <body>
         <a href="/">Home</a></br>
-        <a href="/PageSobreNos">Sobre nós</a>
+        <a href="/PageContato">Contate-nos</a>
+        <h1>Saiba Mais Sobre Nós</h1>
     </body>
 </html>
