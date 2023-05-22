@@ -4,7 +4,11 @@ use App\Http\Controllers\InicioLaravel_InsContr;
 use App\Http\Controllers\Instrucao_InsContr;
 use App\Http\Controllers\Principal_contr;
 use App\Http\Controllers\RoutesMVC_InsContr;
+use App\Http\Controllers\Contato_Contr;
+use App\Http\Controllers\SobreNos_Contr;
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +29,6 @@ Route::get('/PageInicioLaravel', [InicioLaravel_InsContr::class, 'loadPageInicio
 
 Route::get('/PageRoutesMVC', [RoutesMVC_InsContr::class, 'loadPageRoutesMVC']);
 
+Route::get('/PageSobreNos', [SobreNos_Contr::class, 'loadPageSobreNos']);
+
+Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato']);
