@@ -14,7 +14,7 @@ use App\Http\Controllers\Fornecedores_Contr;
 //As rotas acima tem suas classe criadas com o comando
 //php artisan make:controller NomeExemplo
 //uma classe é criada em app/http/controllers com o nome que vc escolheu.
-//é necessário impostá-la manualmente aqui para usar "Route::get()" abaixo.
+//é necessário importá-la manualmente aqui para usar "Route::get()" abaixo.
 
 use Illuminate\Support\Facades\Route;
 
@@ -33,8 +33,9 @@ use Illuminate\Support\Facades\Route;
 
 //Os apelidos instanciados na função "->name()" funcionam no scopo do laravel para codificação
 //mas não funciona no navegador do usuário.
-//é vantajoso para abstrair.
+//é vantajoso para abstrair durante o desenvolvimento.
 //Você usa o apelido no html e não se preocupa em trocá-los caso troque a rota.
+
 Route::get('/', [Principal_contr::class, 'loadPagePrincipal'])->name('home');
 
 Route::get('/PageInstrucao', [Instrucao_InsContr::class, 'loadPageInstrucao'])->name('instrucao');
@@ -49,7 +50,13 @@ Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato'])->name('con
 
 Route::get('/PageLogin', function(){return 'Página de login'; })->name('login');
 
-//foi adicionado um prefixo no grupo dessas rotas a seguir:
+//foi adicionado um prefixo ( Route::prefix()->group(function(){}) ) no grupo dessas rotas combinando com apelidos(->names())
+//exemplo: 
+//   o código abaixo aplicará uma function php/laravel dentro do cód html:
+//      href="{{ route('clientes') }}" 
+//   no html irá chamar a rota equivalente:
+//      href="/Restrito/PageClientes"
+
 Route::prefix('/Restrito')->group(function(){
     Route::get('/PageClientes', function(){return 'Página de clientes'; })->name('clientes');
     Route::get('/PageProdutos', function(){return 'Página de produtos'; })->name('produtos');
