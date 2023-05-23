@@ -6,7 +6,15 @@ use App\Http\Controllers\Principal_contr;
 use App\Http\Controllers\RoutesMVC_InsContr;
 use App\Http\Controllers\Contato_Contr;
 use App\Http\Controllers\SobreNos_Contr;
+use App\Http\Controllers\Login_Contr;
+use App\Http\Controllers\Clientes_Contr;
+use App\Http\Controllers\Produtos_Contr;
+use App\Http\Controllers\Fornecedores_Contr;
 
+//As rotas acima tem suas classe criadas com o comando
+//php artisan make:controller Nome
+//uma classe é criada em app/http/controllers com o nome que vc escolheu.
+//é necessário impostá-la manualmente aqui para usar "Route::get()" abaixo.
 
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +41,16 @@ Route::get('/PageRoutesMVC', [RoutesMVC_InsContr::class, 'loadPageRoutesMVC']);
 Route::get('/PageSobreNos', [SobreNos_Contr::class, 'loadPageSobreNos']);
 
 Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato']);
+
+Route::get('/PageLogin', function(){return 'Página de login'; });
+
+//foi adicionado um prefixo no grupo dessas rotas a seguir:
+Route::prefix('/Restrito')->group(function(){
+    Route::get('/PageClientes', function(){return 'Página de clientes'; });
+    Route::get('/PageProdutos', function(){return 'Página de produtos'; });
+    Route::get('/PageFornecedores', function(){return 'Página de fornecedores'; });
+});
+
 
 //passando parâmetros pelas rotas.
 //veja que "PageInstrucao" é uma rota que já existe.
