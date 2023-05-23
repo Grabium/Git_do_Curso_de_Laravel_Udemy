@@ -12,7 +12,7 @@ use App\Http\Controllers\Produtos_Contr;
 use App\Http\Controllers\Fornecedores_Contr;
 
 //As rotas acima tem suas classe criadas com o comando
-//php artisan make:controller Nome
+//php artisan make:controller NomeExemplo
 //uma classe é criada em app/http/controllers com o nome que vc escolheu.
 //é necessário impostá-la manualmente aqui para usar "Route::get()" abaixo.
 
