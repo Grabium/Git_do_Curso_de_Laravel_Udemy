@@ -6,7 +6,7 @@
         <title>Intruções</title>
     </head>
     <body>
-        <a href="/PageInstrucao">Instruções</a></br>
+        <a href="{{ route('instrucao') }}">Instruções</a></br>
         <h1>Tutorial</h1>
         <h3>Comandos úteis no terminal</h3>
         <p>

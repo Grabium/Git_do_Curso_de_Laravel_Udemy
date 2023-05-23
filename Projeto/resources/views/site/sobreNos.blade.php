@@ -7,13 +7,13 @@
     <h1>Saiba Mais Sobre Nós</h1>
     <ul>
     <li>
-        <a href="/">Home</a>
+        <a href="{{ route('home') }}">Home</a>
     </li>
     <li>
-        <a href="/PageInstrucao">Instruções</a>
+        <a href="{{ route('instrucao') }}">Instruções</a>
     </li>
     <li>
-        <a href="/PageContato">Contate-nos</a>
+        <a href="{{ route('contato') }}">Contate-nos</a>
     </li>
     </ul>
     </body>

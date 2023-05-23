@@ -9,13 +9,13 @@
     <h1>Página de Contatos</h1>
     <ul> 
     <li>
-        <a href="/">Home</a>
+        <a href="{{ route('home') }}">Home</a>
     </li>
     <li>
-        <a href="/PageInstrucao">Instruções</a>
+        <a href="{{ route('instrucao') }}">Instruções</a>
     </li>
     <li>
-        <a href="/PageSobreNos">Sobre nós</a>
+        <a href="{{ route('sobreNos') }}">Sobre nós</a>
     </li>
     </ul>
         

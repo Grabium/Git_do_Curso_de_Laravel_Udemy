@@ -6,8 +6,8 @@
         <title>Intruções</title>
     </head>
     <body>
-        <a href="/PageInicioLaravel">Inicio com Laravel</a></br>
-        <a href="/PageRoutesMVC">Rotas MVC</a></br>
-        <a href="/">Home Page</a></br>
+        <a href="{{ route('inicioLaravel') }}">Inicio com Laravel</a></br>
+        <a href="{{ route('routesMVC') }}">Rotas MVC</a></br>
+        <a href="{{ route('home') }}">Home Page</a></br>
     </body>
 </html>

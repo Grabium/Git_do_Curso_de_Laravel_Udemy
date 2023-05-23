@@ -2,12 +2,12 @@
 
 <ul>
     <li>
-        <a href="/PageInstrucao">Instruções</a>
+        <a href="{{ route('instrucao') }}">Instruções</a>
     </li>
     <li>
-        <a href="/PageContato">Contate-nos</a>
+        <a href="{{ route('contato') }}">Contate-nos</a>
     </li>
     <li>
-        <a href="/PageSobreNos">Sobre nós</a>
+        <a href="{{ route('sobreNos') }}">Sobre nós</a>
     </li>
 </ul>

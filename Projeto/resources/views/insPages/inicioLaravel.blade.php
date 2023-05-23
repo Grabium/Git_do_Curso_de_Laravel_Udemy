@@ -6,7 +6,7 @@
         <title>Instruções</title>
     </head>
     <body>
-        <a href="/PageInstrucao">Instruções</a></br>
+        <a href="{{ route('instrucao') }}">Instruções</a></br>
         <h1>Início com Laravel 10</h1>
         <h3>Instalações:</h3>
         <p>Instale nesta ordem:</br>

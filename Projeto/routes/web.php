@@ -30,25 +30,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Principal_contr::class, 'loadPagePrincipal']);
 
-Route::get('/PageInstrucao', [Instrucao_InsContr::class, 'loadPageInstrucao']);
+//Os apelidos instanciados na função "->name()" funcionam no scopo do laravel para codificação
+//mas não funciona no navegador do usuário.
+//é vantajoso para abstrair.
+//Você usa o apelido no html e não se preocupa em trocá-los caso troque a rota.
+Route::get('/', [Principal_contr::class, 'loadPagePrincipal'])->name('home');
 
-Route::get('/PageInicioLaravel', [InicioLaravel_InsContr::class, 'loadPageInicioLaravel']);
+Route::get('/PageInstrucao', [Instrucao_InsContr::class, 'loadPageInstrucao'])->name('instrucao');
 
-Route::get('/PageRoutesMVC', [RoutesMVC_InsContr::class, 'loadPageRoutesMVC']);
+Route::get('/PageInicioLaravel', [InicioLaravel_InsContr::class, 'loadPageInicioLaravel'])->name('inicioLaravel');
 
-Route::get('/PageSobreNos', [SobreNos_Contr::class, 'loadPageSobreNos']);
+Route::get('/PageRoutesMVC', [RoutesMVC_InsContr::class, 'loadPageRoutesMVC'])->name('routesMVC');
 
-Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato']);
+Route::get('/PageSobreNos', [SobreNos_Contr::class, 'loadPageSobreNos'])->name('sobreNos');
 
-Route::get('/PageLogin', function(){return 'Página de login'; });
+Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato'])->name('contato');
+
+Route::get('/PageLogin', function(){return 'Página de login'; })->name('login');
 
 //foi adicionado um prefixo no grupo dessas rotas a seguir:
 Route::prefix('/Restrito')->group(function(){
-    Route::get('/PageClientes', function(){return 'Página de clientes'; });
-    Route::get('/PageProdutos', function(){return 'Página de produtos'; });
-    Route::get('/PageFornecedores', function(){return 'Página de fornecedores'; });
+    Route::get('/PageClientes', function(){return 'Página de clientes'; })->name('clientes');
+    Route::get('/PageProdutos', function(){return 'Página de produtos'; })->name('produtos');
+    Route::get('/PageFornecedores', function(){return 'Página de fornecedores'; })->name('fornecedores');
 });
 
 
