@@ -10,4 +10,10 @@
     <li>
         <a href="{{ route('sobreNos') }}">Sobre nós</a>
     </li>
+    <li>
+        <a href="{{ route('original') }}">Testar desvio de rota na class Route/Callback</a>
+    </li>
+    <li>
+        <a href="{{ route('original2') }}">Testar desvio de rota por Controller</a>
+    </li>
 </ul>

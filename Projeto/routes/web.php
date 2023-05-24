@@ -79,3 +79,45 @@ function(string $a, float $b, string $opcional='variável não foi declarada'){
 //
 //caso não cumprida uma ou mais requisito, a página de "not found" será carregada.
 
+//Desvios em routes:
+//há dudas maneiras de ser feitas. no Routes/Callback ou Controller.
+//-1Routes/Callback:
+
+Route::get('/rotaDestino', function(){
+    echo "Página de destino alcançado. Desvio concluido com sucesso!";
+    echo '</br>Volte para a <a href="'.route('home').'">home page</a>!';
+})->name('destino');
+
+Route::get('/rotaOriginal', function(){
+    echo "Página original. Fail redirect!";
+    echo '</br>Volte para a <a href="'.route('home').'">home page</a>!';
+})->name('original');
+
+Route::redirect('/rotaOriginal', '/rotaDestino');
+//Route::redirect() recebe as rotas originais e seu respectivo desvio. (não use o ->name() como parâmetro)
+//pode manter o ->name() da rota original no cóidigo html:
+//     <a href="{{ route('original') }}">Testar desvio de rota na class Route</a>
+//Enquanto houver a linha de código do redirect(), o php vai "ignorar" os efeitos da /rotaOriginal e 
+//vai desviar para a /rotaDestino
+
+
+//Neste exemplo o redirecionamento é chamado dentro da rota original. Mais comum entre projetos.
+Route::get('/rotaDestinoEx2', function(){
+    echo "Página de destino alcançado. Desvio concluido com sucesso!";
+    echo '</br>Volte para a <a href="'.route('home').'">home page</a>!';
+})->name('destino2');
+
+Route::get('/rotaOriginalEx2', function(){
+    echo "Página original. Fail redirect!";
+    echo '</br>Volte para a <a href="'.route('home').'">home page</a>!';
+    return redirect()->route('destino2');
+})->name('original2');
+
+
+//Route::fallback() captura rostas inexistentes que iriam para a página "404 NOT FOUND!" 
+//e desvia para um callback que poderia ser uma rota de uma página customizada mais 
+//intuitiva e melhor UX para soluções de problemas.
+//neste exemplo retornaremos apenas um echo() para mais praticidade.
+Route::fallback(function(){
+    echo'Página NÃO encontrada!!! </br></br>Volte para a <a href="'.route('home').'">home page</a>!';
+});

@@ -12,9 +12,15 @@
         <p>
         php artisan .........................................mostra os comandos do artisan</br>
         php artisan serve ...................................inicia servidor na porta padrão 8000</br>
+        ctrl + C.............................................desconecta o servidor artisan</br>
         php artisan serve --port=9000 ......................inicia servidor na porta escolhida 9000</br>
         php artisan down ....................................desvia para modo manutenção</br>
         php artisan up ......................................volta para modo normal, padronizado</br>
+        php artisan make:controller NomeDaClasse ............cria uma classe herdeira de app/http/Controllers/Controller</br>
+        php artisan make ....................................mostra os comandos do artisan make</br>
+        php artisan route:list...............................mostra todas as rotas já criadas</br>
+        php artisan route....................................mostra todos comandos sobre routes</br>
+        
         </br>
         </br>
         Routes possui:</br>
