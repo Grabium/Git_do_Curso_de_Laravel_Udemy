@@ -16,4 +16,10 @@ class InicioLaravel_InsContr extends Controller
     public function loadPageInicioLaravel(){
         return view("insPages/inicioLaravel");
     }
+    
+    public function testarRecebimentoDeParametrosMVC($a, $b, $opcional='variável não foi declarada'){
+        echo "Passagem de parâmetros pela classe de controle InicioLaravel_InsContr extends Controller.\n";
+        echo "1° e 2° variáveis são, respectivamente = $a e $b.\n";
+        echo "E a variável opcional = $opcional.";
+    }
 }
