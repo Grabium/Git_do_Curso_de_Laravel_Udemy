@@ -72,8 +72,13 @@ Route::prefix('/Restrito')->group(function(){
 //Diferente disso, ou de 0(zero) parâmetros, vai dar erro.
 Route::get('/PageInstrucao/{var1}/{var2}/{varOpcional?}', 
     function(string $a, float $b, string $opcional='variável não foi declarada'){
-        echo "1° e 2° variáveis são, respectivamente = $a e $b.\n";
-        echo "E a variável opcional = $opcional.";
+        echo "Parâmetros recebidos sem uso da classe de controle</br>";
+        echo "1° e 2° variáveis são, respectivamente = $a e $b.</br>";
+        if ($opcional == 'variável não foi declarada'){
+            echo "E o parâmtero opcional não foi recebido";
+        }else{
+            echo "E o parâmtero opcional = $opcional.";
+        }        
     })->where('var1', '[A-Za-z]+')->where('var2', '[1.0-9.0]+')->where('opcional', '[A-Za-z]+');
 //Epressões regulares:
 //imposições de condições. var1 deve receber strings e var2, números.
@@ -86,7 +91,7 @@ Route::get('/PageInstrucao/{var1}/{var2}/{varOpcional?}',
 //Testes ainda não executados.
 Route::get('/PageInicioLaravel/{var1}/{var2}/{varOpcional?}',
            [InicioLaravel_InsContr::class, 'testarRecebimentoDeParametrosMVC']
-           })->where('var1', '[A-Za-z]+')->where('var2', '[1.0-9.0]+')->where('opcional', '[A-Za-z]+');
+           )->where('var1', '[A-Za-z]+')->where('var2', '[1.0-9.0]+')->where('opcional', '[A-Za-z]+');
 
 //------------------------------------Desvios em routes:
 //há dudas maneiras de ser feitas. no Routes/Callback ou Controller.

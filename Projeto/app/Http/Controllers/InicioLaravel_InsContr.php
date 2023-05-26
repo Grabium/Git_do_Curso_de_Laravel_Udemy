@@ -18,8 +18,13 @@ class InicioLaravel_InsContr extends Controller
     }
     
     public function testarRecebimentoDeParametrosMVC($a, $b, $opcional='variável não foi declarada'){
-        echo "Passagem de parâmetros pela classe de controle InicioLaravel_InsContr extends Controller.\n";
-        echo "1° e 2° variáveis são, respectivamente = $a e $b.\n";
-        echo "E a variável opcional = $opcional.";
+        echo "Passagem de parâmetros pela classe de controle InicioLaravel_InsContr extends Controller.</br>";
+        echo "1° e 2° variáveis são, respectivamente = $a e $b.</br>";
+        if ($opcional == 'variável não foi declarada'){
+            echo "E o parâmtero opcional não foi recebido";
+        }else{
+            echo "E o parâmtero opcional = $opcional.";
+        }
+        echo "</br><a href='/'>Home</a>";
     }
 }

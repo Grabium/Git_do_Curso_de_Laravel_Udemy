@@ -17,3 +17,4 @@
         <a href="{{ route('original2') }}">Testar desvio de rota por Controller</a>
     </li>
 </ul>
+

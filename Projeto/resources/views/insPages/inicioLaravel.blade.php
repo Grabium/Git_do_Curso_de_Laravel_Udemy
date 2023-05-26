@@ -47,5 +47,6 @@
             <strong><em>example-app<em></strong> Use o nome do projeto.</br>
             <strong><em>"7.0.0"<em></strong> Para forçar uma determinada versão passada do laravel.</br>
             </p>
+            <p>Experimente passar algumas variáveis $a, $b, $opcional após a barra e recarregar a página.</p>
     </body>
 </html>
