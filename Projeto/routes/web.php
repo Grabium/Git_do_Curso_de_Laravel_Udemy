@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InicioLaravel_InsContr;
 use App\Http\Controllers\Instrucao_InsContr;
+use App\Http\Controllers\ParamPorContr_testContr;
 use App\Http\Controllers\Principal_contr;
 use App\Http\Controllers\RoutesMVC_InsContr;
 use App\Http\Controllers\Contato_Contr;
@@ -49,6 +50,8 @@ Route::get('/PageSobreNos', [SobreNos_Contr::class, 'loadPageSobreNos'])->name('
 Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato'])->name('contato');
 
 Route::get('/PageLogin', function(){return 'Página de login'; })->name('login');
+
+Route::get('/PageParamPorController/{varacont}/{varcont}', [ParamPorContr_testContr::class, 'recebeParamPorController'])->name('testeParamPorController');
 
 //foi adicionado um prefixo ( Route::prefix()->group(function(){}) ) no grupo dessas rotas combinando com apelidos(->names())
 //exemplo: 
