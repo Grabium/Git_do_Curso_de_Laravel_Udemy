@@ -8,6 +8,8 @@
     <body>
         <a href="{{ route('inicioLaravel') }}">Inicio com Laravel</a></br>
         <a href="{{ route('routesMVC') }}">Rotas MVC</a></br>
+        <a href="{{ route('comentarios') }}">Comentários php e blade.</a></br>
         <a href="{{ route('home') }}">Home Page</a></br>
+        
     </body>
 </html>

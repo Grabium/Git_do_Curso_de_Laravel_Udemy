@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Comentarios_InsContr;
 use App\Http\Controllers\InicioLaravel_InsContr;
 use App\Http\Controllers\Instrucao_InsContr;
 use App\Http\Controllers\ParamPorContr_testContr;
@@ -53,6 +54,9 @@ Route::get('/PageLogin', function(){return 'Página de login'; })->name('login')
 
 Route::get('/PageParamPorController/{varacont}/{varcont}', [ParamPorContr_testContr::class, 'recebeParamPorController'])->name('testeParamPorController');
 
+route::get('/PageComentarios', [Comentarios_InsContr::class, 'loadPageComentarios'])->name('comentarios');
+
+
 //foi adicionado um prefixo ( Route::prefix()->group(function(){}) ) no grupo dessas rotas combinando com apelidos(->names())
 //exemplo: 
 //   o código abaixo aplicará uma function php/laravel dentro do cód html:
@@ -60,7 +64,7 @@ Route::get('/PageParamPorController/{varacont}/{varcont}', [ParamPorContr_testCo
 //   no html irá chamar a rota equivalente:
 //      href="/Restrito/PageClientes"
 
-Route::prefix('/Restrito')->group(function(){
+Route::prefix('/Site')->group(function(){
     Route::get('/PageClientes', function(){return 'Página de clientes'; })->name('clientes');
     Route::get('/PageProdutos', function(){return 'Página de produtos'; })->name('produtos');
     Route::get('/PageFornecedores', function(){return 'Página de fornecedores'; })->name('fornecedores');
