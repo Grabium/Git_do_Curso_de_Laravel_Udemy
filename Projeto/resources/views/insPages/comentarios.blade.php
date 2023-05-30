@@ -15,5 +15,7 @@
     echo 'Strnig impressa via <strong>@.php...echo()...@.endphp.</strong>'; 
 @endphp
 
+
+
 <p>Blade trabalha com <strong>heranças de templates</strong>, além de ter uma sintaxe prória que roda em cima de php e html</p>
 <p>Veja as possibilidades de comentários em arquivo .blade no próprio arquivo /insPages/comentario.blade.php</p>

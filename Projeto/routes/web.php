@@ -52,7 +52,7 @@ Route::get('/PageContato', [Contato_Contr::class, 'loadPageContato'])->name('con
 
 Route::get('/PageLogin', function(){return 'Página de login'; })->name('login');
 
-Route::get('/PageParamPorController/{varacont}/{varcont}', [ParamPorContr_testContr::class, 'recebeParamPorController'])->name('testeParamPorController');
+Route::get('/PageParamPorController/{strpar}/{intpar}', [ParamPorContr_testContr::class, 'loadParamPorController'])->name('testeParamPorController');
 
 route::get('/PageComentarios', [Comentarios_InsContr::class, 'loadPageComentarios'])->name('comentarios');
 

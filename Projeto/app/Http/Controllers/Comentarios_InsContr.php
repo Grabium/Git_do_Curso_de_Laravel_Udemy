@@ -7,6 +7,8 @@ namespace App\Http\Controllers;
 class Comentarios_InsContr extends Controller
 {
     public function loadPageComentarios(){
-        return view('/insPages/comentarios');
+        //$nota = 6.1;
+        //$sagradaFamilia = ['Maria', 'Jesus', 'José'];
+        return view('/insPages/comentarios');//, compact('nota', 'sagradaFamilia'));
     }
 }

@@ -6,9 +6,13 @@ namespace App\Http\Controllers;
 
 class ParamPorContr_testContr extends Controller
 {
-    public function recebeParamPorController(string $acont, int $bcont){
+    public function loadParamPorController(string $acont, int $bcont){
+        $nota = 6.1;
+        $sagradaFamilia = ['Maria', 'Jesus', 'José', 'array declarada no controller ParamPorContr_testContr'];
+
+        //abaixo, as formas de enviar:
         //return view("testes/paramPorController", ['acont' => $acont, 'bcont' => $bcont]); //array ascociativo.
-        //return view("testes/paramPorController", compact('acont', 'bcont')); //compact() é nativo do php. O mais recomendável.
-        return view("testes/paramPorController")->with('acont', $acont)->with('bcont', $bcont); //with('nomeVar',valorVar) metodo do Laravel.
+        return view("testes/paramPorController", compact('acont', 'bcont', 'nota', 'sagradaFamilia')); //compact() é nativo do php. O mais recomendável.
+        //return view("testes/paramPorController")->with('acont', $acont)->with('bcont', $bcont); //with('nomeVar',valorVar) metodo do Laravel.
     }
 }
