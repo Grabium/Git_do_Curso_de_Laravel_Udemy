@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SintaxeBlade_TestContr;
 use App\Http\Controllers\Comentarios_InsContr;
 use App\Http\Controllers\InicioLaravel_InsContr;
 use App\Http\Controllers\Instrucao_InsContr;
@@ -56,6 +57,7 @@ Route::get('/PageParamPorController/{strpar}/{intpar}', [ParamPorContr_testContr
 
 route::get('/PageComentarios', [Comentarios_InsContr::class, 'loadPageComentarios'])->name('comentarios');
 
+Route::get('/PageSintaxeBlade', [SintaxeBlade_TestContr::class, 'loadPageSintaxeBlade'])->name('sintaxeBlade');
 
 //foi adicionado um prefixo ( Route::prefix()->group(function(){}) ) no grupo dessas rotas combinando com apelidos(->names())
 //exemplo: 
