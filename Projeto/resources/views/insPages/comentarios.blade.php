@@ -2,6 +2,7 @@
 <a href="{{ route('instrucao') }}">Instruções</a></br>
 
 {{'String com sintaxe blade com '}}<strong>{{'parêntesis duplo.'}}</strong></br></br>
+@{{ Usar um arroba antes da abertura da chave dupla do blade faze que ele ignore a sintaxe php dentro. }}</br></br>
 <?php echo 'string com sintaxe php via: <strong><.?php..echo()..?.></strong></br></br>' ?>
 
 {{-- Comentário con sintaxe blade --}}
